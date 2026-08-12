@@ -1,28 +1,22 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Programação completa e convidados da Nexus Cup 2026."
-    />
+    <meta name="description" content="Programação completa e convidados da Nexus Cup 2026."/>
     <title>Programação | Nexus Cup 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
+    <!-- Menu principal -->
     <header class="header">
       <nav class="nav container" aria-label="Navegação principal">
-        <a class="nav_logo" href="index.html"
-          ><img src="images/logo.png" alt="Nexus Cup 2026"
-        /></a>
+        <a class="nav_logo" href="index.html">
+          <img src="images/logo.png" alt="Nexus Cup 2026"/></a>
         <ul class="nav_links">
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#sobre">O festival</a></li>
@@ -31,14 +25,14 @@
           </li>
           <li><a href="ingressos.html">Ingressos</a></li>
         </ul>
-        <a class="btn btn-primary nav_cta" href="ingressos.html"
-          >Garantir ingresso</a>
+        <a class="btn btn-primary nav_cta" href="ingressos.html">Garantir ingresso</a>
       </nav>
     </header>
     <main>
+      <!-- Apresentação da página -->
       <section class="page-hero">
         <div class="container">
-          <p class="kicker">Agenda oficial</p>
+          <p class="section-label">Agenda oficial</p>
           <h1>Programação</h1>
           <p>
             Monte sua rota pela arena: partidas decisivas, encontros com
@@ -48,10 +42,10 @@
       </section>
       <section class="section container">
         <div class="section-head">
-          <p class="kicker">15—17 de agosto</p>
+          <p class="section-label">15—17 de agosto</p>
           <h2 class="section-title">Agenda do evento</h2>
         </div>
-        <div class="schedule-grid">
+        <div class="event-days">
           <article class="card day-card">
             <header class="day-card_head">
               <span>Dia 01 · Sexta</span>
@@ -60,7 +54,7 @@
             <ul class="timeline">
               <li><time>09:00</time><span>Abertura da arena</span></li>
               <li><time>10:00</time><span>Valorant · Grupos</span></li>
-              <li><time>14:00</time><span>League of Legends · Grupos</span></li>
+              <li><time>14:00</time><span>CS GO 2 · Grupos</span></li>
               <li><time>19:00</time><span>EA FC · Grupos</span></li>
             </ul>
           </article>
@@ -71,8 +65,9 @@
             </header>
             <ul class="timeline">
               <li><time>10:00</time><span>Valorant · Semifinal</span></li>
-              <li><time>13:00</time><span>LoL · Semifinal</span></li>
-              <li><time>16:00</time><span>Meet &amp; Greet</span></li>
+              <li><time>13:00</time><span>CS GO 2 · Semifinal</span></li>
+              <li><time>16:30</time><span>Meet &amp; Greet</span></li>
+              <li><time>17:30</time><span>EA FC · Semifinal</span></li>
               <li><time>19:00</time><span>Batalha de criadores</span></li>
             </ul>
           </article>
@@ -82,9 +77,10 @@
               <h3>Grandes finais</h3>
             </header>
             <ul class="timeline">
-              <li><time>12:00</time><span>EA FC · Grande final</span></li>
+              <!-- <time> tag semantica correta para horarios-->
+              <li><time>12:00</time><span>EA FC · Grande final</span></li> 
               <li><time>15:00</time><span>Valorant · Grande final</span></li>
-              <li><time>18:30</time><span>LoL · Grande final</span></li>
+              <li><time>18:30</time><span>CS GO 2 · Grande final</span></li>
               <li><time>21:30</time><span>Premiação e encerramento</span></li>
             </ul>
           </article>
@@ -93,38 +89,44 @@
       <section class="section section-tint">
         <div class="container">
           <div class="section-head">
-            <p class="kicker">Quem faz acontecer</p>
+            <p class="section-label">Quem faz acontecer</p>
             <h2 class="section-title">Talentos &amp; convidados</h2>
             <p class="section-copy">
               Vozes que conhecem o jogo por dentro e transformam cada momento em
               espetáculo.
             </p>
           </div>
-          <div class="speaker-grid">
-            <article class="card speaker">
-              <div class="speaker_avatar">LM</div>
-              <p class="role">Host &amp; caster</p>
-              <h3 class="card_title">Lara Monteiro</h3>
+          <div class="famous-grid">
+            <article class="card famous">
+              <div class="famous_avatar">
+                <img src="images/narradora.png" alt="Narradora Nivy" />
+              </div>
+              <p class="famous_job">Host &amp; caster</p>
+              <h3 class="card_title">Nyvi Estephan</h3>
               <p>
-                Apresentadora e narradora de Valorant, com cinco anos de cenário
+                A maior apresentadora e narradora de e-sports, com sete anos de cenário
                 competitivo.
               </p>
             </article>
-            <article class="card speaker">
-              <div class="speaker_avatar">RX</div>
-              <p class="role">Pro player</p>
-              <h3 class="card_title">Rafael “Rex” Lima</h3>
+            <article class="card famous">
+              <div class="famous_avatar">
+                <img src="images/aspas.png" alt="Pro Player" />
+              </div>
+              <p class="famous_job">Pro player</p>
+              <h3 class="card_title">Aspas</h3>
               <p>
-                Campeão brasileiro de League of Legends e analista convidado das
+                Um dos maiores jogadores da Cena, campeão brasileiro de Valorant e analista convidado das
                 finais.
               </p>
             </article>
-            <article class="card speaker">
-              <div class="speaker_avatar">BI</div>
-              <p class="role">Creator</p>
-              <h3 class="card_title">Bia “Impact” Alves</h3>
+            <article class="card famous">
+              <div class="famous_avatar">
+                <img src="images/gaules.png" alt="Gaules" />
+              </div>
+              <p class="famous_job">Creator</p>
+              <h3 class="card_title">Gaules</h3>
               <p>
-                Criadora de conteúdo e referência em futebol eletrônico na
+                Criador de conteúdo e referência em cobrir campeonatos de e-sports na
                 comunidade.
               </p>
             </article>
@@ -134,21 +136,20 @@
       <section class="section container">
         <div class="cta">
           <div>
-            <p class="kicker">Não perca nenhuma partida</p>
+            <p class="section-label">Não perca nenhuma partida</p>
             <h2 class="section-title">A arena espera por você</h2>
           </div>
-          <a class="btn btn-primary" href="ingressos.html"
-            >Escolher ingresso</a
-          >
+          <a class="btn btn-primary" href="ingressos.html">Escolher ingresso</a>
         </div>
       </section>
     </main>
+    <!-- Rodapé e links úteis -->
     <footer class="footer">
       <div class="container">
         <div class="footer_grid">
           <div>
             <img class="footer_logo" src="images/logo.png" alt="Nexus Cup" />
-            <p class="muted">O encontro de quem vive o jogo.</p>
+            <p class="secondary-text">O encontro de quem vive o jogo.</p>
           </div>
           <div>
             <h3>Navegue</h3>
@@ -162,8 +163,8 @@
             <h3>Conecte-se</h3>
             <ul>
               <li><a href="#">Instagram</a></li>
-              <li><a href="#">Twitch</a></li>
-              <li><a href="mailto:contato@nexuscup.com.br">Contato</a></li>
+              <li><a href="https://www.twitch.tv/gaules">Twitch</a></li>
+              <li><a href="https://www.linkedin.com/in/gustavo-buzacarini-b1b97b338/">Contato</a></li>
             </ul>
           </div>
         </div>
@@ -172,4 +173,3 @@
     </footer>
   </body>
 </html>
-

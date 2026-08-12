@@ -10,3 +10,38 @@
   --display: "Rajdhani", sans-serif;
   --body: "Inter", sans-serif;
 }
+
+/* Mantém as medidas iguais em todos os elementos */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Deixa as transições entre as paginas suave */
+html {
+  scroll-behavior: smooth;
+}
+
+body, h1, h2, h3, p,
+
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,input, textarea {
+  font: inherit;
+}
+
+/* Remove os sublinhados azuis e o link herda a cor do elemento pai */
+a {
+  color: inherit;
+  text-decoration: none;
+}
