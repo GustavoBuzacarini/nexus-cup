@@ -220,6 +220,11 @@ h1,h2, h3 {
   margin-top: 2rem;
 }
 
+#sobre{
+  position: relative;
+  z-index: 2;
+}
+
 .about-grid,
 .contact-grid {
   display: grid;
