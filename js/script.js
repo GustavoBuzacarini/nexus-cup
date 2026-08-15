@@ -16,38 +16,87 @@ ScrollSmoother.create({
 // Animação fade-in do header e do hero
 gsap.from(".header", {
   opacity: 0,
-  duration: 1.2
+  duration: 2.5
 })
 
 gsap.from(".hero", {
   opacity: 0,
-  duration: 1.2
+  duration: 2.5
 })
 
 // Animação cards
 
-gsap.from(".card",{
-	opacity: 0,
-	y: 100,
-	filter: "blur(5px)",
-	stagger: 0.3,
-	scrollTrigger: {
-		trigger: ".card-grid",
-		start: "0% 70%",
-		scrub: true,
-		end: "100% 15%"
-	}
+const cardSections = [
+	// Secao de experiencias da Home
+	{ selector: ".home-experience-cards", start: "top 80%", end: "bottom 55%", stagger: 0.3, },
+
+	// Secao da agenda resumida da Home
+	{ selector: ".home-agenda-cards", start: "top 80%", end: "bottom 55%", stagger: 0.3 },
+
+	// Secao da agenda da pagina Programacao
+	{ selector: ".program-agenda-cards", start: "top 80%", end: "bottom 75%", stagger: 0.3 },
+
+	// Secao de convidados da pagina Programacao
+	{ selector: ".program-famous-cards", start: "top 90%", end: "bottom 65%", stagger: 0.3 },
+
+	// Secao de ingressos da pagina Ingressos
+	{ selector: ".ingre-price-cards", start: "top 90%", end: "bottom 65%",},
+
+
+	{ selector: ".partners-grid", start: "top 90%", end: "bottom 65%", stagger: 0.3 },
+]
+
+cardSections.forEach(({ selector, start, end, stagger }) => {
+	const section = document.querySelector(selector)
+
+	if (!section) return
+
+	gsap.from(section.querySelectorAll(".card"), {
+		opacity: 0,
+		y: 100,
+		filter: "blur(5px)",
+		stagger,
+		scrollTrigger: {
+			trigger: section,
+			start,
+			scrub: true,
+			end
+		}
+	})
 })
 
-gsap.from(".event-days",{
-	opacity: 0,
-	y: 100,
-	filter: "blur(2px)",
-	stagger: 0.3,
-	scrollTrigger: {
-		trigger: ".event-days",
-		start: "0% 90%",
-		scrub: true,
-		end: "100% 70%",
-	}
+// Animação de textos com SplitText
+
+const split = SplitText.create(".textSplit",{
+	type: " lines, words, chars",
+	mask: "lines",
 })
+
+gsap.from(split.chars, {
+  y: 40,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.05,
+})
+
+const splitLines = SplitText.create(".textSplit-lines",{
+	type: " lines, words,",
+	mask: "lines",
+})
+
+gsap.from(splitLines.lines, {
+  y: 40,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.05,
+  delay: 1.8,
+})
+
+gsap.fromTo(".btn-animation", {
+    autoAlpha: 0
+  },
+  {
+    autoAlpha: 1,
+    delay: 2.5 
+  }
+)

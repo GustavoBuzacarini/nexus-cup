@@ -1,4 +1,4 @@
-/* Estilos gerais da página */
+/* ESTILOS GERAIS E FUNDO DA PAGINA */
 body {
   min-width: 320px;
   background: var(--bg);
@@ -22,7 +22,9 @@ body::before {
   background-size: 48px 48px;
 }
 
-h1,h2, h3 {
+/* TIPOGRAFIA E ESTRUTURA REUTILIZAVEL */
+
+h1, h2, h3 {
   font-family: var(--display);
   /* é o espaço entre as linhas do texto, deixa o titulo bem mais compacto */
   line-height: 1.05;
@@ -68,7 +70,7 @@ h1,h2, h3 {
   color: var(--muted);
 }
 
-/* Menu principal */
+/* CABECALHO E MENU PRINCIPAL */
 .header {
   /* o sticky deixa o elemento fixo na pagina */
   position: sticky;
@@ -110,6 +112,8 @@ h1,h2, h3 {
   color: var(--green);
 }
 
+/* BOTOES */
+
 .btn {
   min-height: 46px;
   display: inline-flex;
@@ -144,7 +148,7 @@ h1,h2, h3 {
 }
 
 
-/* Apresentação da página inicial */
+/* HERO DA PAGINA INICIAL */
 .hero {
   position: relative;
   /* isolation: isolate cria um novo contexto de empilhamento, garante que os z-index: -1/-2 internos do .hero não briguem
@@ -220,7 +224,9 @@ h1,h2, h3 {
   margin-top: 2rem;
 }
 
-#sobre{
+/* SOBRE, GRADES E CARDS GERAIS */
+
+#sobre {
   position: relative;
   z-index: 2;
 }
@@ -273,6 +279,8 @@ h1,h2, h3 {
 }
 
 
+/* LINKS E CHAMADAS PARA ACAO */
+
 .text-link {
   display: inline-block;
   margin-top: 1.5rem;
@@ -291,7 +299,7 @@ h1,h2, h3 {
   gap: 1.5rem;
 }
 
-/* Programação do evento */
+/* PAGINAS INTERNAS E PROGRAMACAO */
 .page-hero {
   padding-block: 6rem 3rem;
   border-bottom: 1px solid var(--border);
@@ -342,6 +350,8 @@ h1,h2, h3 {
   font: 700 1rem var(--display);
 }
 
+/* CARDS DE CONVIDADOS */
+
 .famous {
   min-height: 245px;
   justify-content: flex-end;
@@ -375,6 +385,12 @@ h1,h2, h3 {
   font: 700 0.75rem var(--display);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* INGRESSOS E CARD MAIS ESCOLHIDO */
+
+#chosen-card {
+  border-color: var(--green);
 }
 
 .price-grid {
@@ -425,6 +441,8 @@ h1,h2, h3 {
   width: 100%;
 }
 
+/* PATROCINADORES, CONTATO E FAQ */
+
 .partners-grid {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -467,7 +485,7 @@ h1,h2, h3 {
   color: var(--muted);
 }
 
-/* Rodapé */
+/* RODAPE */
 .footer {
   padding-block: 3rem;
   border-top: 1px solid var(--border);
@@ -502,6 +520,8 @@ h1,h2, h3 {
   font-size: 0.75rem;
 }
 
+/* RESPONSIVIDADE - TABLETS */
+
 @media (min-width: 680px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -511,6 +531,10 @@ h1,h2, h3 {
   .famous-grid,
   .price-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  #chosen-card {
+    transform: translateY(-18px);
   }
 
   .about-grid,
@@ -529,6 +553,8 @@ h1,h2, h3 {
     grid-template-columns: 2fr 1fr 1fr;
   }
 }
+
+/* RESPONSIVIDADE - DESKTOP */
 
 @media (min-width: 860px) {
   .nav_links,
