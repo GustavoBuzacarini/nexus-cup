@@ -28,19 +28,19 @@ gsap.from(".hero", {
 
 const cardSections = [
 	// Secao de experiencias da Home
-	{ selector: ".home-experience-cards", start: "top 80%", end: "bottom 55%", stagger: 0.3, },
+	{ selector: ".card-grid--home-experience", start: "top 80%", end: "bottom 55%", stagger: 0.3, },
 
 	// Secao da agenda resumida da Home
-	{ selector: ".home-agenda-cards", start: "top 80%", end: "bottom 55%", stagger: 0.3 },
+	{ selector: ".event-days--home-agenda", start: "top 80%", end: "bottom 55%", stagger: 0.3 },
 
 	// Secao da agenda da pagina Programacao
-	{ selector: ".program-agenda-cards", start: "top 80%", end: "bottom 75%", stagger: 0.3 },
+	{ selector: ".event-days--program-agenda", start: "top 80%", end: "bottom 75%", stagger: 0.3 },
 
 	// Secao de convidados da pagina Programacao
-	{ selector: ".program-famous-cards", start: "top 90%", end: "bottom 65%", stagger: 0.3 },
+	{ selector: ".famous-grid--program", start: "top 90%", end: "bottom 65%", stagger: 0.3 },
 
 	// Secao de ingressos da pagina Ingressos
-	{ selector: ".ingre-price-cards", start: "top 90%", end: "bottom 65%",},
+	{ selector: ".price-grid--tickets", start: "top 90%", end: "bottom 65%",},
 
 
 	{ selector: ".partners-grid", start: "top 90%", end: "bottom 65%", stagger: 0.3 },
@@ -67,7 +67,7 @@ cardSections.forEach(({ selector, start, end, stagger }) => {
 
 // Animação de textos com SplitText
 
-const split = SplitText.create(".textSplit",{
+const split = SplitText.create(".hero__split-text",{
 	type: " lines, words, chars",
 	mask: "lines",
 })
@@ -79,7 +79,7 @@ gsap.from(split.chars, {
   stagger: 0.05,
 })
 
-const splitLines = SplitText.create(".textSplit-lines",{
+const splitLines = SplitText.create(".hero__split-lines",{
 	type: " lines, words,",
 	mask: "lines",
 })
@@ -92,7 +92,7 @@ gsap.from(splitLines.lines, {
   delay: 1.8,
 })
 
-gsap.fromTo(".btn-animation", {
+gsap.fromTo(".hero__animated-button", {
     autoAlpha: 0
   },
   {
