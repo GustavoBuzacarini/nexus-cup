@@ -42,11 +42,7 @@ nexus-cup/
 ├── js/
 │   └── script.js
 ├── assets/
-│   └── images/
-└── design/
-    ├── proposta-imagens-jogos.md
-    ├── mockup-home-jogos.png
-    └── mockup-programacao-jogos.png
+    └── images/
 ```
 
 As classes CSS seguem a convenção **BEM**: bloco (`.card`), elemento (`.card__title`) e modificador (`.btn--primary`). Classes compartilhadas, como `.container`, funcionam como blocos independentes.
