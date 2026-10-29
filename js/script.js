@@ -130,6 +130,7 @@ if (carousel) {
   const slideDuration = 6000
   const slides = [...carousel.querySelectorAll("[data-slide]")]
   const indicators = [...carousel.querySelectorAll("[data-carousel-to]")]
+  const progressBar = indicators[1]
   const status = carousel.querySelector("[data-carousel-status]")
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
   let current = 0
@@ -138,13 +139,13 @@ if (carousel) {
   let lastFrameTime = null
 
   function updateProgress() {
-    indicators[current].style.setProperty("--progress", Math.min(elapsed / slideDuration, 1))
+    progressBar.style.setProperty("--progress", Math.min(elapsed / slideDuration, 1))
   }
 
   function showSlide(index, announce = false) {
     current = (index + slides.length) % slides.length
     elapsed = 0
-    indicators.forEach((button) => button.style.setProperty("--progress", 0))
+    progressBar.style.setProperty("--progress", 0)
     slides.forEach((slide, position) => {
       const active = position === current
       slide.classList.toggle("is-active", active)
