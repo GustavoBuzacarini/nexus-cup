@@ -8,7 +8,7 @@
       content="Programação completa e convidados da Nexus Cup 2026."
     />
     <title>Programação | Nexus Cup 2026</title>
-    <link rel="icon" type="image/png" href="images/logo-icone.png" />
+    <link rel="icon" type="image/png" href="assets/images/logo-icone.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -26,7 +26,7 @@
         <header class="header">
           <nav class="nav container" aria-label="Navegação principal">
             <a class="nav__logo" href="index.html">
-              <img src="images/logo.png" alt="Nexus Cup 2026"
+              <img src="assets/images/logo.png" alt="Nexus Cup 2026"
             /></a>
             <ul class="nav__links">
               <li><a href="index.html">Home</a></li>
@@ -50,6 +50,35 @@
                 Monte sua rota pela arena: partidas decisivas, encontros com
                 talentos e experiências durante os três dias.
               </p>
+            </div>
+          </section>
+          <section class="section container games-showcase" aria-labelledby="games-showcase-title">
+            <div class="section__head">
+              <p class="section-label">Os jogos da Nexus</p>
+              <h2 class="section-title" id="games-showcase-title">Conheça as disputas</h2>
+            </div>
+            <div class="games-showcase__list" tabindex="0" aria-label="Imagens de Valorant, CS GO 2 e EA FC">
+              <article class="game-tile">
+                <picture>
+                  <source media="(max-width: 679px)" srcset="assets/images/img-valorant-mobile.jpg" />
+                  <img src="assets/images/img-valorant-pc.jpg" alt="Arte promocional de Valorant com os agentes do jogo" loading="lazy" />
+                </picture>
+                <h3>Valorant</h3>
+              </article>
+              <article class="game-tile">
+                <picture>
+                  <source media="(max-width: 679px)" srcset="assets/images/img-csgo-mobile.jpg" />
+                  <img src="assets/images/img-csgo-pc.jpg" alt="Arte promocional de Counter-Strike com dois agentes" loading="lazy" />
+                </picture>
+                <h3>CS GO 2</h3>
+              </article>
+              <article class="game-tile">
+                <picture>
+                  <source media="(max-width: 679px)" srcset="assets/images/img-fifa-mobile.jpg" />
+                  <img src="assets/images/img-fifa-pc.jpg" alt="Arte promocional de EA FC com jogador de futebol" loading="lazy" />
+                </picture>
+                <h3>EA FC</h3>
+              </article>
             </div>
           </section>
           <section class="section container">
@@ -112,10 +141,10 @@
                   momento em espetáculo.
                 </p>
               </div>
-              <div class="famous-grid famous-grid--program" id="famous-gsap">
+              <div class="famous-grid famous-grid--program">
                 <article class="card famous">
                   <div class="famous__avatar">
-                    <img src="images/narradora.png" alt="Narradora Nivy" />
+                    <img src="assets/images/narradora.png" alt="Narradora Nivy" />
                   </div>
                   <p class="famous__job">Host & caster</p>
                   <h3 class="card__title">Nyvi Estephan</h3>
@@ -126,7 +155,7 @@
                 </article>
                 <article class="card famous">
                   <div class="famous__avatar">
-                    <img src="images/aspas.png" alt="Pro Player" />
+                    <img src="assets/images/aspas.png" alt="Pro Player" />
                   </div>
                   <p class="famous__job">Pro player</p>
                   <h3 class="card__title">Aspas</h3>
@@ -137,7 +166,7 @@
                 </article>
                 <article class="card famous">
                   <div class="famous__avatar">
-                    <img src="images/gaules.png" alt="Gaules" />
+                    <img src="assets/images/gaules.png" alt="Gaules" />
                   </div>
                   <p class="famous__job">Creator</p>
                   <h3 class="card__title">Gaules</h3>
@@ -168,7 +197,7 @@
               <div>
                 <img
                   class="footer__logo"
-                  src="images/logo.png"
+                  src="assets/images/logo.png"
                   alt="Nexus Cup"
                 />
                 <p class="secondary-text">O encontro de quem vive o jogo.</p>

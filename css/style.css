@@ -171,7 +171,7 @@ h1, h2, h3 {
   /* inset: 0 é atalho para top/right/bottom/left: 0 */
   inset: 0;
   z-index: -2;
-  background: url("../images/hero-bg.jpg") center/cover no-repeat;
+  background: url("../assets/images/hero-bg.jpg") center/cover no-repeat;
   opacity: 2; 
 }
 
@@ -246,7 +246,205 @@ h1, h2, h3 {
   margin-top: 1rem;
 }
 
-.stats,
+/* IMAGENS DOS JOGOS */
+.games-carousel__slides {
+  overflow: hidden;
+}
+
+.games-carousel.is-ready .game-slide:not(.is-active) {
+  display: none;
+}
+
+.games-carousel.is-ready .game-slide.is-active {
+  animation: game-slide-enter 450ms ease-out;
+}
+
+.games-carousel.is-ready .game-slide.is-prev {
+  animation: game-prev-enter 450ms ease-out;
+}
+
+.games-carousel.is-ready .game-slide.is-next {
+  animation: game-next-enter 450ms ease-out;
+}
+
+@keyframes game-slide-enter {
+  from {
+    opacity: 0.55;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes game-prev-enter {
+  from { opacity: 0.55; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes game-next-enter {
+  from { opacity: 0.55; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.game-slide {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.game-slide.is-active {
+  border-color: var(--green);
+}
+
+.game-slide picture,
+.game-slide img,
+.game-tile picture,
+.game-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.game-slide img,
+.game-tile img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.game-slide::after,
+.game-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(7, 10, 8, 0.9), transparent 60%);
+  pointer-events: none;
+}
+
+.game-slide__content,
+.game-tile h3 {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+.game-slide__content h3 {
+  font-size: 2.5rem;
+}
+
+.game-slide__content p {
+  color: var(--text);
+}
+
+.games-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.games-carousel__controls button {
+  cursor: pointer;
+}
+
+.games-carousel__arrow {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
+}
+
+.games-carousel__arrow {
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+
+.games-carousel__indicators {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.games-carousel__indicators button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+}
+
+.games-carousel__indicators button::before,
+.games-carousel__indicators button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  transform: translateY(-50%);
+}
+
+.games-carousel__indicators button::before {
+  background: #526057;
+}
+
+.games-carousel__indicators button::after {
+  background: var(--green);
+  transform: translateY(-50%) scaleX(var(--progress, 0));
+  transform-origin: left center;
+}
+
+.games-carousel__controls button:focus-visible,
+.games-showcase__list:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.games-showcase {
+  padding-bottom: 0;
+}
+
+.games-showcase__list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.game-tile {
+  position: relative;
+  flex: 0 0 78%;
+  height: 300px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.game-tile h3 {
+  font-size: 1.7rem;
+}
+
 .card-grid,
 .event-days,
 .famous-grid,
@@ -255,21 +453,12 @@ h1, h2, h3 {
   gap: 1rem;
 }
 
-.stats {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .card {
   position: relative;
   overflow: hidden;
   padding: 1.5rem;
   border: 1px solid var(--border);
   background: var(--surface);
-}
-
-.card__number {
-  color: var(--green);
-  font: 700 2.3rem var(--display);
 }
 
 .card__title {
@@ -528,6 +717,16 @@ h1, h2, h3 {
 /* RESPONSIVIDADE - TABLETS */
 
 @media (min-width: 680px) {
+  .games-showcase__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+  }
+
+  .game-tile {
+    height: 220px;
+  }
+
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -562,6 +761,52 @@ h1, h2, h3 {
 /* RESPONSIVIDADE - DESKTOP */
 
 @media (min-width: 860px) {
+  #jogos {
+    width: min(1280px, calc(100% - 2rem));
+  }
+
+  .games-carousel.is-ready .games-carousel__slides {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .games-carousel.is-ready .game-slide.is-prev,
+  .games-carousel.is-ready .game-slide.is-active,
+  .games-carousel.is-ready .game-slide.is-next {
+    display: block;
+  }
+
+  .games-carousel.is-ready .game-slide.is-prev,
+  .games-carousel.is-ready .game-slide.is-next {
+    flex: 0 0 20%;
+  }
+
+  .games-carousel.is-ready .game-slide.is-prev {
+    order: 0;
+  }
+
+  .games-carousel.is-ready .game-slide.is-active {
+    order: 1;
+    flex: 1;
+  }
+
+  .games-carousel.is-ready .game-slide.is-next {
+    order: 2;
+  }
+
+  .games-carousel.is-ready .game-slide:not(.is-active) .game-slide__content {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .games-carousel.is-ready .game-slide:not(.is-active) h3 {
+    font-size: 1.25rem;
+  }
+
+  .games-carousel.is-ready .game-slide:not(.is-active) p {
+    display: none;
+  }
+
   .nav {
     flex-wrap: nowrap;
     padding-block: 0;
@@ -591,5 +836,13 @@ h1, h2, h3 {
 
   .partners-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .games-carousel.is-ready .game-slide.is-active,
+  .games-carousel.is-ready .game-slide.is-prev,
+  .games-carousel.is-ready .game-slide.is-next {
+    animation: none;
   }
 }
